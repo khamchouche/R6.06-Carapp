@@ -1,0 +1,23 @@
+Code Smells
+
+1. Problèmes de Logique et Bogues Potentiels
+
+    Seuil de majorité erroné : Dans Conducteur.java, la méthode estAdulte() retourne age >= 10  au lieu  de 18 ans.
+    Les méthodes accelerer() et ralentir() dans Voiture.java impriment directement des détails dans la console (System.out.println).
+        Cela mélange la logique métier (calcul de vitesse) et l'affichage, ce qui rend les tests plus difficiles.
+
+2. Nommage et Lisibilité (Clean Code)
+
+    Dans le constructeur de Conducteur, vous recevez String name et int years pour les assigner à nom et age.
+        Il est préférable d'utiliser les mêmes noms pour plus de clarté
+
+3. Duplication de Code (Don't Repeat Yourself)
+
+    Les blocs System.out.println dans accelerer() et ralentir() sont identiques.
+        Cette logique d'affichage devrait être extraite dans une méthode dédiée, par exemple afficherEtat().
+    Dans changerVitesse de Conducteur.java, les boucles while pour accélérer ou ralentir pourraient être simplifiées ou déplacées vers la classe Voiture.
+
+4. Encapsulation et Responsabilités
+
+    La classe Conducteur manipule très précisément la vitesse de la Voiture via une boucle.
+     Idéalement, le Conducteur devrait donner un ordre (voiture.atteindreVitesse(80)) et la Voiture devrait gérer sa propre accélération interne.
