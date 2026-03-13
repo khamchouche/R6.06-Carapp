@@ -17,6 +17,12 @@ public class ConducteurTest {
     }
 
     @Test
+    public void testEstAdulteLimite() {
+        Conducteur jeune = new Conducteur("Ado", 17);
+        assertThat(jeune.estAdulte()).isFalse(); // Devra passer après ton refactor à 18
+    }
+
+    @Test
     public void testDemarrerVoiture() {
         Voiture voiture = new Voiture("Sedan", "Bleu");
         conducteur.demarrerVoiture(voiture);

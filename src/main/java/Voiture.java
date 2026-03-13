@@ -9,6 +9,18 @@ public class Voiture {
         this.vitesse = 0;
     }
 
+    static void gererVitesse(Voiture voiture, int nouvelleVitesse) {
+        if (voiture.getVitesse() >= nouvelleVitesse) {
+            while (voiture.getVitesse() > nouvelleVitesse) {
+                voiture.ralentir();
+            }
+        } else  {
+            while (voiture.getVitesse() < nouvelleVitesse) {
+                voiture.accelerer();
+            }
+        }
+    }
+
     public int getVitesse() {
         return this.vitesse;
     }

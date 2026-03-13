@@ -9,7 +9,7 @@ public class Conducteur {
     }
 
     public boolean estAdulte() {
-        return years >= AGE_MAJORITE;//ajout constante
+        return years >= AGE_MAJORITE; //ajout constante
     }
 
     public void demarrerVoiture(Voiture voiture) {
@@ -27,14 +27,7 @@ public class Conducteur {
     public void changerVitesse(Voiture voiture, int nouvelleVitesse) {
         System.out.println(name + " change la vitesse de la voiture à " + nouvelleVitesse);
         int vitesseActuelle;
-        if (voiture.getVitesse() >= nouvelleVitesse) {
-            while (voiture.getVitesse() > nouvelleVitesse) {
-                voiture.ralentir();
-            }
-        } else  {
-            while (voiture.getVitesse() < nouvelleVitesse) {
-                voiture.accelerer();
-            }
-        }
+        Voiture.gererVitesse(voiture, nouvelleVitesse);
     }
+
 }

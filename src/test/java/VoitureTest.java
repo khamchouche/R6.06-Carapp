@@ -16,7 +16,11 @@ public class VoitureTest {
         voiture.accelerer();
         assertThat(voiture.getVitesse()).isEqualTo(10);
     }
-
+    @Test
+    public void testVitesseMax() {
+        for(int i=0; i<15; i++) { voiture.accelerer(); }
+        assertThat(voiture.getVitesse()).isEqualTo(120); // Vérifie que ça ne dépasse pas 120
+    }
     @Test
     public void testRalentir() {
         voiture.accelerer();
