@@ -25,14 +25,14 @@ public class ConducteurTest {
     @Test
     public void testDemarrerVoiture() {
         Voiture voiture = new Voiture("Sedan", "Bleu");
-        conducteur.demarrerVoiture(voiture);
+        voiture.demarrerVoiture(conducteur);
         // How to assert that the demarrerVoiture method was called?
     }
 
     @Test
     public void testArreterVoiture() {
         Voiture voiture = new Voiture("Sedan", "Bleu");
-        conducteur.arreterVoiture(voiture);
+        voiture.arreterVoiture(conducteur);
         // How to assert that the arreterVoiture method was called?
     }
 
@@ -40,7 +40,7 @@ public class ConducteurTest {
     public void testChangerVitesse() {
         Voiture voiture = new Voiture("Sedan", "Bleu");
 
-        conducteur.changerVitesse(voiture, 80);
+        voiture.changerVitesse(80, conducteur);
         assertThat(voiture.getVitesse()).isEqualTo(80);
     }
 }

@@ -11,23 +11,7 @@ public class Conducteur {
     public boolean estAdulte() {
         return years >= AGE_MAJORITE; //ajout constante
     }
-
-    public void demarrerVoiture(Voiture voiture) {
-        if (estAdulte()) {
-            System.out.println(name + " démarre la voiture.");
-        } else {
-            System.out.println("Le conducteur n'est pas assez âgé pour conduire.");
-        }
+    public String getNom() {
+        return this.name; // ou this.name selon ton refactoring
     }
-
-    public void arreterVoiture(Voiture voiture) {
-        System.out.println(name + " arrête la voiture.");
-    }
-
-    public void changerVitesse(Voiture voiture, int nouvelleVitesse) {
-        System.out.println(name + " change la vitesse de la voiture à " + nouvelleVitesse);
-        int vitesseActuelle;
-        Voiture.gererVitesse(voiture, nouvelleVitesse);
-    }
-
 }
